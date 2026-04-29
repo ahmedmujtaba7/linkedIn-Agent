@@ -1,0 +1,9 @@
+.env
+__pycache__/
+*.pyc
+.playwright/
+error_screenshot.png
+linkedin_cookies.json
+linkedin_state.json
+editor_debug.png
+get-token.py

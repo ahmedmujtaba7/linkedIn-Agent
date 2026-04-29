@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — LinkedIn Post Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0f12;
+      --bg2:       #13161b;
+      --bg3:       #1a1e25;
+      --border:    rgba(255,255,255,0.07);
+      --border2:   rgba(255,255,255,0.12);
+      --accent:    #0a66c2;
+      --accent2:   #0e8cff;
+      --text:      #e4e7ed;
+      --muted:     #7b8494;
+      --muted2:    #a0a9b8;
+      --tag-bg:    rgba(10,102,194,0.12);
+      --tag-text:  #4da3ff;
+      --good:      #22c55e;
+      --warn:      #f59e0b;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Grid lines background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--tag-bg);
+      border: 1px solid rgba(10,102,194,0.25);
+      color: var(--tag-text);
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent2);
+      border-radius: 50%;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    h1 {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 13px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .meta span { display: flex; align-items: center; gap: 6px; }
+    .meta span::before { content: '—'; opacity: 0.4; }
+
+    /* ── Summary card ── */
+    .summary {
+      background: var(--bg2);
+      border: 1px solid var(--border2);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .summary-title {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .summary ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .summary li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--muted2);
+    }
+
+    .summary li .icon {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+    }
+
+    .icon.ok  { background: rgba(34,197,94,0.15);  color: var(--good); }
+    .icon.no  { background: rgba(239,68,68,0.12);  color: #f87171; }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section:last-child { border-bottom: none; }
+
+    .section-num {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--accent2);
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    p { color: var(--muted2); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Info grid ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 520px) { .info-grid { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .info-card .label {
+      font-family: 'DM Mono', monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .info-card .value {
+      font-size: 13px;
+      color: var(--text);
+    }
+
+    /* ── Highlight block ── */
+    .highlight {
+      background: rgba(10,102,194,0.07);
+      border: 1px solid rgba(10,102,194,0.2);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--muted2);
+    }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 64px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .footer-tag {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="badge">Privacy Policy</div>
+    <h1>LinkedIn Post Agent<br>Privacy Policy</h1>
+    <div class="meta">
+      <span>Last updated: March 2026</span>
+      <span>Version 1.0</span>
+      <span>Personal Developer Tool</span>
+    </div>
+  </header>
+
+  <!-- Quick summary -->
+  <div class="summary">
+    <div class="summary-title">Plain-language summary</div>
+    <ul>
+      <li>
+        <span class="icon ok">✓</span>
+        This tool only posts to the developer's own LinkedIn account — no other users are involved.
+      </li>
+      <li>
+        <span class="icon ok">✓</span>
+        No personal data from any third party is collected, stored, or shared.
+      </li>
+      <li>
+        <span class="icon ok">✓</span>
+        OAuth tokens are stored as encrypted GitHub Actions secrets — never logged or exposed.
+      </li>
+      <li>
+        <span class="icon no">✗</span>
+        We do not sell, rent, or share any data with anyone.
+      </li>
+      <li>
+        <span class="icon no">✗</span>
+        We do not use cookies or track visitors to this page.
+      </li>
+    </ul>
+  </div>
+
+  <!-- 1. Overview -->
+  <section>
+    <div class="section-num">01</div>
+    <h2>Overview</h2>
+    <p>
+      LinkedIn Post Agent ("the Application") is a personal automation tool developed by
+      an individual developer for the sole purpose of scheduling and publishing content
+      to their own LinkedIn profile using the official LinkedIn API.
+    </p>
+    <p>
+      This application is not a commercial product, is not available to the public,
+      and does not process the data of any person other than the developer who
+      built and operates it.
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Application type</div>
+        <div class="value">Personal developer tool</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Users</div>
+        <div class="value">Developer only (1 account)</div>
+      </div>
+      <div class="info-card">
+        <div class="label">API used</div>
+        <div class="value">LinkedIn Official API v2</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Data collected</div>
+        <div class="value">None from third parties</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Data collected -->
+  <section>
+    <div class="section-num">02</div>
+    <h2>Data We Collect</h2>
+    <p>
+      This application does not collect personal data from any individual other than
+      the developer's own LinkedIn account credentials obtained through the standard
+      OAuth 2.0 authorization flow.
+    </p>
+    <p>
+      Specifically, the only data the application accesses is:
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">OAuth access token</div>
+        <div class="value">Used to authenticate API requests to LinkedIn on behalf of the account owner.</div>
+      </div>
+      <div class="info-card">
+        <div class="label">LinkedIn profile URN</div>
+        <div class="value">A unique identifier required by the LinkedIn API to specify which account receives the post.</div>
+      </div>
+    </div>
+    <div class="highlight">
+      No names, email addresses, profile data, connection lists, messages, or any
+      other LinkedIn data is accessed, read, stored, or transmitted beyond what is
+      strictly required to publish a post.
+    </div>
+  </section>
+
+  <!-- 3. How data is used -->
+  <section>
+    <div class="section-num">03</div>
+    <h2>How We Use LinkedIn Data</h2>
+    <p>
+      LinkedIn data is used exclusively for one purpose: publishing scheduled content
+      to the authenticated account owner's own LinkedIn profile via the official
+      LinkedIn UGC Posts API endpoint.
+    </p>
+    <p>
+      The application does not use LinkedIn data for analytics, advertising,
+      profiling, training machine learning models, or any purpose other than
+      directly posting content as described above.
+    </p>
+  </section>
+
+  <!-- 4. Data storage & security -->
+  <section>
+    <div class="section-num">04</div>
+    <h2>Data Storage &amp; Security</h2>
+    <p>
+      OAuth tokens are stored exclusively as encrypted secrets within GitHub Actions,
+      using GitHub's built-in secret management. They are:
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Encryption</div>
+        <div class="value">Encrypted at rest by GitHub's secret store</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Access</div>
+        <div class="value">Only accessible during workflow execution</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Logs</div>
+        <div class="value">Never printed to logs or console output</div>
+      </div>
+      <div class="info-card">
+        <div class="label">Third parties</div>
+        <div class="value">Never shared with any external service</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">
+      No external database, analytics service, or third-party storage provider
+      is used by this application.
+    </p>
+  </section>
+
+  <!-- 5. Third-party services -->
+  <section>
+    <div class="section-num">05</div>
+    <h2>Third-Party Services</h2>
+    <p>
+      This application interacts with the following external services:
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">LinkedIn API</div>
+        <div class="value">Used to publish posts. Subject to <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank">LinkedIn's Privacy Policy</a>.</div>
+      </div>
+      <div class="info-card">
+        <div class="label">GitHub Actions</div>
+        <div class="value">Used to run the scheduled workflow. Subject to <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank">GitHub's Privacy Policy</a>.</div>
+      </div>
+    </div>
+    <p style="margin-top:16px;">
+      No advertising networks, tracking pixels, or analytics services are embedded
+      in this application or this page.
+    </p>
+  </section>
+
+  <!-- 6. Content generation -->
+  <section>
+    <div class="section-num">06</div>
+    <h2>AI-Generated Content</h2>
+    <p>
+      Post content is generated using an AI language model based on themes and
+      parameters configured by the developer. All generated content is reviewed
+      and approved by the developer before or as part of the scheduling process.
+      No personal data of any third party is used as input to the content
+      generation process.
+    </p>
+  </section>
+
+  <!-- 7. Your rights -->
+  <section>
+    <div class="section-num">07</div>
+    <h2>Your Rights</h2>
+    <p>
+      Since this application does not collect data from any person other than the
+      developer who operates it, there is no third-party user data to access,
+      correct, or delete.
+    </p>
+    <p>
+      If you believe this application has inadvertently collected data related to
+      you, please contact us using the details below and we will respond promptly.
+    </p>
+  </section>
+
+  <!-- 8. Changes -->
+  <section>
+    <div class="section-num">08</div>
+    <h2>Changes to This Policy</h2>
+    <p>
+      This privacy policy may be updated if the nature or scope of the application
+      changes. The "last updated" date at the top of this page will reflect any
+      revisions. Continued use of the application after changes constitutes
+      acceptance of the updated policy.
+    </p>
+  </section>
+
+  <!-- 9. Contact -->
+  <section>
+    <div class="section-num">09</div>
+    <h2>Contact</h2>
+    <p>
+      For any questions or concerns about this privacy policy or the application,
+      please reach out:
+    </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <div class="label">Developer</div>
+        <div class="value">Umar Siddiqui </div>
+      </div>
+      <div class="info-card">
+        <div class="label">Email</div>
+        <div class="value"><a href="mailto:umar.siddiqui.94009@gmail.com">umar.siddiqui.94009@gmail.com</a></div>
+      </div>
+      <div class="info-card">
+        <div class="label">GitHub</div>
+        <div class="value"><a href="https://github.com/Umar-Siddiqui-dev" target="_blank">https://github.com/Umar-Siddiqui-dev</a></div>
+      </div>
+      <div class="info-card">
+        <div class="label">Location</div>
+        <div class="value">Pakistan</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:0;padding-bottom:40px">
+    <p>© 2026 LinkedIn Post Agent · Personal Developer Tool · All rights reserved</p>
+    <span class="footer-tag">v1.0 · March 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>
