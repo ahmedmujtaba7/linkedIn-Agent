@@ -1,8 +1,6 @@
 name: LinkedIn Auto Post Agent
 
 on:
-  schedule:
-    - cron: '0 5 * * 1-6'  # 10AM PKT (UTC+5) = 5AM UTC, Mon-Sat
   workflow_dispatch:        # Manual trigger from GitHub UI
 
 jobs:
